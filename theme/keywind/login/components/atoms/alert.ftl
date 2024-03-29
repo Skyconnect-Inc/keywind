@@ -1,4 +1,4 @@
-<#macro kw color="">
+<#macro kw color="" rest...>
   <#switch color>
     <#case "error">
       <#assign colorClass="bg-red-100 text-red-600">
@@ -16,7 +16,14 @@
       <#assign colorClass="bg-blue-100 text-blue-600">
   </#switch>
 
-  <div class="${colorClass} p-4 rounded-lg text-sm" role="alert">
+  <div 
+    class="${colorClass} p-4 rounded-lg text-sm" 
+    role="alert"
+
+    <#list rest as attrName, attrValue>
+      ${attrName}="${attrValue}"
+    </#list>
+  >
     <#nested>
   </div>
 </#macro>

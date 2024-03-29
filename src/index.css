@@ -31,3 +31,13 @@
     @apply mr-2;
   }
 }
+
+.iti__flag { background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.1.0/img/flags.png"); }
+
+@media (min-resolution: 2x) {
+  .iti__flag { background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.1.0/img/flags@2x.png"); }
+}
+
+.iti {
+  width: 100%;
+}

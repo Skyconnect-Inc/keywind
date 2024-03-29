@@ -42,6 +42,9 @@
         ${kcSanitize(message.summary)?no_esc}
       </@alert.kw>
     </#if>
+
+    <#nested "socialProviders">
+
     <#nested "form">
     <#if displayRequiredFields>
       <p class="text-secondary-600 text-sm">
@@ -56,7 +59,7 @@
         </@button.kw>
       </form>
     </#if>
-    <#nested "socialProviders">
+    <#--  <#nested "socialProviders">  -->
   </#assign>
 
   <#assign cardFooter>
@@ -65,7 +68,7 @@
     </#if>
   </#assign>
 
-  <html<#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
+  <html <#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
     <head>
       <@document.kw script=script />
     </head>

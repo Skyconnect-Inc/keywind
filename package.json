@@ -8,7 +8,10 @@
     "test": "mvn test"
   },
   "dependencies": {
+    "@types/intl-tel-input": "^18.1.4",
     "alpinejs": "^3.13.0",
+    "axios": "^1.6.8",
+    "intl-tel-input": "^20.0.5",
     "rfc4648": "^1.5.2"
   },
   "devDependencies": {

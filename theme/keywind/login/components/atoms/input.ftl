@@ -4,7 +4,7 @@
 <#macro
   kw
   autofocus=false
-  class="block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+  class="block border-secondary-200 mt-1 rounded-md w-full p-4 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
   disabled=false
   invalid=false
   label=""
@@ -40,7 +40,7 @@
           @click="show = !show"
           aria-controls="${name}"
           :aria-expanded="show"
-          class="absolute text-secondary-400 right-3 top-3 sm:top-2"
+          class="absolute text-secondary-400 right-3 top-1/2 transform -translate-y-1/2"
           type="button"
         >
           <div x-show="!show">
@@ -51,6 +51,22 @@
           </div>
         </button>
       </div>
+    <#elseif type == "tel">
+      <input
+        <#if autofocus>autofocus</#if>
+        <#if disabled>disabled</#if>
+        <#if required>required</#if>
+
+        aria-invalid="${invalid?c}"
+        class="${class}"
+        name="${name}"
+        placeholder="${label}"
+        type="${type}"
+
+        <#list rest as attrName, attrValue>
+          ${attrName}="${attrValue}"
+        </#list>
+      >
     <#else>
       <input
         <#if autofocus>autofocus</#if>
