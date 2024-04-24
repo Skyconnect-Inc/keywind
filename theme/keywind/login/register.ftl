@@ -6,8 +6,7 @@
 <#import "components/atoms/link.ftl" as link>
 
 <@layout.registrationLayout
-  displayMessage=!messagesPerField.existsError("firstName", "lastName", "email", "username", "password", "password-confirm")
-  ;
+  displayMessage=!messagesPerField.existsError("firstName", "lastName", "email", "username", "password", "password-confirm");
   section
 >
   <#if section="header">

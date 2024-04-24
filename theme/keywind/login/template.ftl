@@ -76,7 +76,7 @@
     <@body.kw>
       <@container.kw>
         <@imglogo.kw>
-          <img class="w-[134px]" src="${url.resourcesPath}/img/logo1.png" alt="bg">
+          <img class="w-[100] sm:w-[134px]" src="${url.resourcesPath}/img/logo1.png" alt="bg">
         </@imglogo.kw>
         <@card.kw content=cardContent footer=cardFooter header=cardHeader />
         <@nav.kw>
@@ -87,10 +87,8 @@
         </@nav.kw>
       </@container.kw>
 
-      <div class="my-[50px]"></div>
-
-      <@imglogo.kw class="absolute bottom-0 left-0 right-0">
-        <img class="w-[134px]" src="${url.resourcesPath}/img/logo2.png" alt="bg">
+      <@imglogo.kw class="py-16">
+        <img class="w-[100] sm:w-[134px]" src="${url.resourcesPath}/img/logo2.png" alt="bg">
       </@imglogo.kw>
 
     </@body.kw>

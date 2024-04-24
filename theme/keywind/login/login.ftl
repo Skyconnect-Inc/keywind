@@ -12,8 +12,7 @@
 
 <@layout.registrationLayout
   displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??
-  displayMessage=!messagesPerField.existsError("username", "password")
-  ;
+  displayMessage=!messagesPerField.existsError("username", "password");
   section
 >
   <#if section="header">
