@@ -6,6 +6,7 @@
 <#import "components/atoms/container.ftl" as container>
 <#import "components/atoms/heading.ftl" as heading>
 <#import "components/atoms/logo.ftl" as logo>
+<#import "components/atoms/logo-img.ftl" as imglogo>
 <#import "components/atoms/nav.ftl" as nav>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
@@ -19,9 +20,9 @@
   showAnotherWayIfPresent=true
 >
   <#assign cardHeader>
-    <@logo.kw>
+    <#--  <@logo.kw>
       ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
-    </@logo.kw>
+    </@logo.kw>  -->
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>
         <#nested "header">
@@ -74,6 +75,9 @@
     </head>
     <@body.kw>
       <@container.kw>
+        <@imglogo.kw>
+          <img class="w-[134px]" src="${url.resourcesPath}/img/logo1.png" alt="bg">
+        </@imglogo.kw>
         <@card.kw content=cardContent footer=cardFooter header=cardHeader />
         <@nav.kw>
           <#nested "nav">
@@ -82,6 +86,13 @@
           </#if>
         </@nav.kw>
       </@container.kw>
+
+      <div class="my-[50px]"></div>
+
+      <@imglogo.kw class="absolute bottom-0 left-0 right-0">
+        <img class="w-[134px]" src="${url.resourcesPath}/img/logo2.png" alt="bg">
+      </@imglogo.kw>
+
     </@body.kw>
   </html>
 </#macro>

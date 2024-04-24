@@ -3,6 +3,8 @@ import './index.css';
 import intlTelInput from 'intl-tel-input';
 import Alpine from 'alpinejs';
 import axios from 'axios';
+// @ts-ignore
+import bg1 from './bg1.png';
 
 
 window.intlTelInput = intlTelInput;
