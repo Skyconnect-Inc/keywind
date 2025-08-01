@@ -92,9 +92,7 @@ Alpine.data("phoneOtp", function (
             
             const phoneNumber = formatPhoneNumber()
             if (!phoneNumber) {
-                this.errorMessage = requiredPhoneNumber;
-                console.log("Phone number not found ...");
-                document?.getElementById('phoneNumber')?.focus();
+                console.log("Phone number not provided - skipping verification");
                 return;
             }
             console.log("Sending verification code ... to ", phoneNumber);
