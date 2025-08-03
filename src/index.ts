@@ -93,6 +93,7 @@ Alpine.data("phoneOtp", function (
             const phoneNumber = formatPhoneNumber()
             if (!phoneNumber) {
                 console.log("Phone number not provided - skipping verification");
+                this.phoneActivated = true;
                 return;
             }
             console.log("Sending verification code ... to ", phoneNumber);
@@ -100,6 +101,10 @@ Alpine.data("phoneOtp", function (
                 return;
             }
             this.req(phoneNumber);
+        },
+        skipPhoneVerification: function () {
+            console.log("Skipping phone verification");
+            this.phoneActivated = true;
         }
     }
 });

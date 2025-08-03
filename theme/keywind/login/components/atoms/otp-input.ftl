@@ -8,7 +8,7 @@
   label=""
   message=""
   name=""
-  required=true
+  required=false
   type="text"
   rest...
 >
