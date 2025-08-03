@@ -45,7 +45,7 @@ type PhoneOTPData = {
             attemptedPhoneActivated: boolean,
             attemptedPhoneNumber: string,
             sendVerificationCode: string,
-            requiredPhoneNumber: any,
+       
             realmName: string,
             type: 'login' | 'registration'
         }
@@ -55,7 +55,7 @@ type PhoneOTPData = {
 Alpine.data("phoneOtp", function (
     this: PhoneOTPData) {
 
-    const { attemptedPhoneActivated, realmName, type, attemptedPhoneNumber, sendVerificationCode, requiredPhoneNumber } = this.$store.phoneOtp;
+    const { attemptedPhoneActivated, realmName, type, attemptedPhoneNumber, sendVerificationCode } = this.$store.phoneOtp;
     console.log(this.$store.phoneOtp);
     
     return {
