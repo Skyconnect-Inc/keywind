@@ -66,8 +66,8 @@ Alpine.data("phoneOtp", function (
         realm: realmName,
         sendButtonText: sendVerificationCode,
         initSendButtonText: sendVerificationCode,
-        req: function (phoneNumber: string) {
-            const params = { params: { phoneNumber } }
+        req: function (phoneNumber: string, kind:string|null) {
+            const params = { params: { phoneNumber, kind } }
             let url = `/realms/${this.realm}/sms/authentication-code`;
             if (type === 'registration') {
                 url = `/realms/${this.realm}/sms/registration-code`;
@@ -88,19 +88,24 @@ Alpine.data("phoneOtp", function (
                 }, 1000);
             }
         },
-        sendVerificationCode: function () {
+        sendVerificationCode: function (kind:string|null=null) {
             
             const phoneNumber = formatPhoneNumber()
             if (!phoneNumber) {
                 console.log("Phone number not provided - skipping verification");
                 this.phoneActivated = true;
+                // Submit the form when no phone number is provided
+                // const form = document.querySelector('form[action*="registration"]') as HTMLFormElement;
+                // if (form) {
+                //     form.submit();
+                // }
                 return;
             }
             console.log("Sending verification code ... to ", phoneNumber);
             if (this.sendButtonText !== this.initSendButtonText) {
                 return;
             }
-            this.req(phoneNumber);
+            this.req(phoneNumber, kind);
         },
         skipPhoneVerification: function () {
             console.log("Skipping phone verification");
